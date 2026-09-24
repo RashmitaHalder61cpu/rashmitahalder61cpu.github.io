@@ -24,7 +24,8 @@ export const portfolioData = {
   socials: {
     github: "https://github.com/RashmitaHalder61cpu",
     linkedin: "https://www.linkedin.com/in/rashmita-halder/",
-    emailPlaceholder: "your-email@example.com",
+    email: "rashmitahalder61@gmail.com",
+    emailPlaceholder: "rashmitahalder61@gmail.com",
   },
 
   education: {

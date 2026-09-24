@@ -8,7 +8,8 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(portfolioData.socials.emailPlaceholder);
+    const emailToCopy = portfolioData.socials.email || portfolioData.socials.emailPlaceholder;
+    navigator.clipboard.writeText(emailToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2200);
   };
@@ -89,7 +90,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Email Card (Clearly marked placeholder) */}
+            {/* Email Card */}
             <div className="sm:col-span-2 p-7 rounded-2xl bg-[#FFFFFF] border border-[#E5E0D8] transition-all duration-200 hover:border-[#D9480F]/40">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-start gap-4">
@@ -101,37 +102,56 @@ export default function Contact() {
                       <h3 className="text-xl font-semibold text-[#141413]">
                         Email
                       </h3>
-                      <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#F4F1EB] text-[#8C8880] border border-[#E5E0D8]">
-                        Placeholder
+                      <span className={`font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded border ${
+                        (portfolioData.socials.email || portfolioData.socials.emailPlaceholder).includes('example.com')
+                          ? 'bg-[#F4F1EB] text-[#8C8880] border-[#E5E0D8]'
+                          : 'bg-[#FDF3EE] text-[#D9480F] border-[#D9480F]/30'
+                      }`}>
+                        {(portfolioData.socials.email || portfolioData.socials.emailPlaceholder).includes('example.com')
+                          ? 'Placeholder'
+                          : 'Available'}
                       </span>
                     </div>
                     <p className="mt-1 text-sm text-[#6B6862]">
-                      Email contact slot (ready to be updated with personal email).
+                      {(portfolioData.socials.email || portfolioData.socials.emailPlaceholder).includes('example.com')
+                        ? 'Email contact slot (ready to be updated with personal email).'
+                        : 'Feel free to reach out directly with questions or opportunities.'}
                     </p>
                     <div className="mt-2 font-mono text-sm text-[#141413]">
-                      {portfolioData.socials.emailPlaceholder}
+                      {portfolioData.socials.email || portfolioData.socials.emailPlaceholder}
                     </div>
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={handleCopyEmail}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-[#E5E0D8] bg-[#F9F8F6] text-sm text-[#141413] font-medium hover:border-[#D9480F] hover:bg-[#FDF3EE] hover:text-[#D9480F] transition-all focus-visible:ring-2 focus-visible:ring-[#D9480F] self-start sm:self-center flex-shrink-0 cursor-pointer"
-                  aria-label="Copy email address placeholder to clipboard"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="w-4 h-4 text-[#D9480F]" />
-                      <span className="text-[#D9480F]">Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-4 h-4" />
-                      <span>Copy Address</span>
-                    </>
+                <div className="flex items-center gap-2.5 self-start sm:self-center flex-shrink-0 flex-wrap">
+                  {!(portfolioData.socials.email || portfolioData.socials.emailPlaceholder).includes('example.com') && (
+                    <a
+                      href={`mailto:${portfolioData.socials.email || portfolioData.socials.emailPlaceholder}`}
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#D9480F] text-[#FFFFFF] text-sm font-semibold hover:bg-[#C03E0C] transition-all focus-visible:ring-2 focus-visible:ring-[#D9480F]"
+                    >
+                      <Mail className="w-4 h-4" />
+                      <span>Send Email</span>
+                    </a>
                   )}
-                </button>
+                  <button
+                    type="button"
+                    onClick={handleCopyEmail}
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-[#E5E0D8] bg-[#F9F8F6] text-sm text-[#141413] font-medium hover:border-[#D9480F] hover:bg-[#FDF3EE] hover:text-[#D9480F] transition-all focus-visible:ring-2 focus-visible:ring-[#D9480F] self-start sm:self-center flex-shrink-0 cursor-pointer"
+                    aria-label="Copy email address to clipboard"
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="w-4 h-4 text-[#D9480F]" />
+                        <span className="text-[#D9480F]">Copied!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4" />
+                        <span>Copy Address</span>
+                      </>
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
 

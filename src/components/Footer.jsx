@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { portfolioData } from '../data/portfolioData';
 
@@ -51,6 +51,15 @@ export default function Footer() {
               aria-label="LinkedIn Profile of Rashmita Halder (opens in new tab)"
             >
               <LinkedinIcon className="w-4 h-4" />
+            </a>
+
+            <a
+              href={`mailto:${portfolioData.socials.email}`}
+              className="p-2.5 rounded-lg text-[#6B6862] hover:text-[#141413] hover:bg-[#F4F1EB] transition-colors focus-visible:ring-2 focus-visible:ring-[#D9480F]"
+              aria-label="Send email to Rashmita Halder"
+              title="Email Rashmita Halder"
+            >
+              <Mail className="w-4 h-4" />
             </a>
 
             <button
