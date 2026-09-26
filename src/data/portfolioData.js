@@ -121,11 +121,25 @@ export const portfolioData = {
         "Core searching & sorting algorithmic techniques",
         "Focus on optimal time and space complexity analysis",
       ],
-      githubUrl: "https://github.com/RashmitaHalder61cpu",
+      githubUrl: "https://github.com/RashmitaHalder61cpu/leetcode-solutions",
       featured: true,
     },
+   {
+  id: "hello-world",
+  title: "Hello World",
+  subtitle: "Programming Fundamentals",
+  description:
+    "A simple introductory programming project demonstrating the basic Hello World program and fundamental programming structure.",
+  technologies: ["C"],
+  capabilities: [
+    "Basic program structure",
+    "Standard output using printf",
+    "Introduction to C programming",
   ],
-
+  githubUrl: "https://github.com/RashmitaHalder61cpu/hello-world",
+  featured: true,
+},
+  ],
   contact: {
     heading: "Let's Connect",
     subheading:
