@@ -1,26 +1,759 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rashmita Halder — CSE Student &amp; Aspiring Software Developer</title>
-    <meta name="description" content="Personal developer portfolio of Rashmita Halder, Computer Science and Engineering student at REVA University. Interested in programming, algorithms, and practical software development." />
-    
-    <!-- Open Graph / Meta -->
-    <meta property="og:title" content="Rashmita Halder — CSE Student & Aspiring Software Developer" />
-    <meta property="og:description" content="Personal developer portfolio of Rashmita Halder, Computer Science and Engineering student at REVA University." />
-    <meta property="og:type" content="website" />
-    
-    <!-- Google Fonts: Plus Jakarta Sans, Newsreader, JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23141413'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='56' fill='%23F9F8F6'>R</text><circle cx='76' cy='76' r='10' fill='%23D9480F'/></svg>" />
-    <script type="module" crossorigin src="/assets/index-DqmgmjtL.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DmPkxZbc.css">
-  </head>
-  <body class="bg-[#F9F8F6] text-[#141413] antialiased selection:bg-[#D9480F]/15 selection:text-[#141413] min-h-screen">
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rashmita Halder — CSE Student Portfolio Blog</title>
+  <meta name="description" content="Personal portfolio blog of Rashmita Halder, 2nd Year Computer Science and Engineering student at REVA University. Showcasing Activities 1-4, LeetCode solutions, C systems programming, and development journey.">
+
+  <!-- Google Fonts: Newsreader (Editorial Serif) + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#F9F8F6',
+            primary: '#141413',
+            muted: '#6B6862',
+            card: '#FFFFFF',
+            borderWarm: '#E5E0D8',
+            borderSubtle: '#F0ECE4',
+            accent: '#D9480F',
+            accentHover: '#C03E0C',
+            accentLight: '#FDF3EE',
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: #F9F8F6;
+      color: #141413;
+      overflow-x: hidden;
+    }
+    :focus-visible {
+      outline: 2px solid #D9480F;
+      outline-offset: 3px;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F9F8F6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D8D2C7;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #BCB5A8;
+    }
+  </style>
+</head>
+<body class="bg-[#F9F8F6] text-[#141413] antialiased selection:bg-[#D9480F]/15 selection:text-[#141413] min-h-screen flex flex-col">
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#D9480F] focus:text-white focus:rounded-md text-sm font-medium">
+    Skip to main content
+  </a>
+
+  <!-- Sticky Navbar -->
+  <header class="sticky top-0 z-50 w-full bg-[#F9F8F6]/95 backdrop-blur-md border-b border-[#E5E0D8]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        
+        <!-- Brand / Name -->
+        <a href="#home" class="flex items-center gap-2 group rounded-md p-1 focus-visible:ring-2 focus-visible:ring-[#D9480F]">
+          <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#141413] group-hover:text-[#D9480F] transition-colors">
+            Rashmita Halder
+          </span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#D9480F]" aria-hidden="true"></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Main Navigation">
+          <a href="#home" class="px-3 py-1.5 text-sm font-medium text-[#6B6862] hover:text-[#141413] hover:bg-[#F2EFE9] rounded-md transition-colors">Home</a>
+          <a href="#about" class="px-3 py-1.5 text-sm font-medium text-[#6B6862] hover:text-[#141413] hover:bg-[#F2EFE9] rounded-md transition-colors">About</a>
+          <a href="#activities" class="px-3 py-1.5 text-sm font-medium text-[#6B6862] hover:text-[#141413] hover:bg-[#F2EFE9] rounded-md transition-colors">Activities 1–4</a>
+          <a href="#skills" class="px-3 py-1.5 text-sm font-medium text-[#6B6862] hover:text-[#141413] hover:bg-[#F2EFE9] rounded-md transition-colors">Skills</a>
+          <a href="#goal" class="px-3 py-1.5 text-sm font-medium text-[#6B6862] hover:text-[#141413] hover:bg-[#F2EFE9] rounded-md transition-colors">Career Goal</a>
+          <a href="#contact" class="px-3 py-1.5 text-sm font-medium text-[#6B6862] hover:text-[#141413] hover:bg-[#F2EFE9] rounded-md transition-colors">Contact</a>
+        </nav>
+
+        <!-- Social Buttons -->
+        <div class="hidden md:flex items-center gap-2 pl-4 border-l border-[#E5E0D8]">
+          <a href="https://github.com/RashmitaHalder61cpu" target="_blank" rel="noopener noreferrer" class="p-2 text-[#6B6862] hover:text-[#141413] hover:bg-[#F2EFE9] rounded-lg transition-colors" title="GitHub Profile" aria-label="GitHub Profile">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/rashmita-halder/" target="_blank" rel="noopener noreferrer" class="p-2 text-[#6B6862] hover:text-[#141413] hover:bg-[#F2EFE9] rounded-lg transition-colors" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-[#141413] hover:bg-[#F2EFE9]" aria-label="Toggle navigation menu">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[#E5E0D8] bg-[#F9F8F6] px-4 py-4 space-y-2">
+      <a href="#home" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-[#141413] hover:bg-[#F2EFE9]">Home</a>
+      <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-[#141413] hover:bg-[#F2EFE9]">About</a>
+      <a href="#activities" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-[#141413] hover:bg-[#F2EFE9]">Activities 1–4</a>
+      <a href="#skills" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-[#141413] hover:bg-[#F2EFE9]">Skills</a>
+      <a href="#goal" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-[#141413] hover:bg-[#F2EFE9]">Career Goal</a>
+      <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-[#141413] hover:bg-[#F2EFE9]">Contact</a>
+      <div class="pt-3 border-t border-[#E5E0D8] flex gap-3">
+        <a href="https://github.com/RashmitaHalder61cpu" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2 bg-white border border-[#E5E0D8] rounded-lg text-sm font-medium">GitHub</a>
+        <a href="https://www.linkedin.com/in/rashmita-halder/" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2 bg-white border border-[#E5E0D8] rounded-lg text-sm font-medium">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-grow">
+
+    <!-- HERO SECTION -->
+    <section id="home" class="pt-12 pb-20 md:pt-20 md:pb-28 border-b border-[#E5E0D8]/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <div class="lg:col-span-8 space-y-6">
+            <!-- Academic Stage Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFFFFF] border border-[#E5E0D8] text-xs font-mono text-[#6B6862]">
+              <span class="w-2 h-2 rounded-full bg-[#D9480F] animate-pulse"></span>
+              <span>2nd Year CSE • REVA University</span>
+            </div>
+
+            <!-- Name and Title -->
+            <div class="space-y-3">
+              <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#141413] font-serif leading-[1.08]">
+                Rashmita Halder
+              </h1>
+              <p class="text-lg sm:text-2xl font-medium text-[#D9480F] tracking-tight">
+                CSE Student | Aspiring Software Developer
+              </p>
+            </div>
+
+            <!-- Authentic Introduction -->
+            <p class="text-base sm:text-lg lg:text-xl text-[#4D4B46] leading-relaxed max-w-2xl">
+              I am a Computer Science and Engineering student interested in programming and building software. I enjoy learning through practical projects and continuously developing my skills in programming, algorithms, and software development.
+            </p>
+
+            <!-- Action CTAs -->
+            <div class="pt-4 flex flex-wrap items-center gap-3 sm:gap-4">
+              <a href="#activities" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#D9480F] text-[#FFFFFF] text-sm font-semibold shadow-sm hover:bg-[#C03E0C] transition-all">
+                <span>View My Activities &amp; Projects</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+              </a>
+
+              <a href="https://github.com/RashmitaHalder61cpu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D8] text-sm font-semibold text-[#141413] hover:border-[#D9480F] hover:text-[#D9480F] transition-all">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                <span>GitHub</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/rashmita-halder/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D8] text-sm font-semibold text-[#141413] hover:border-[#D9480F] hover:text-[#D9480F] transition-all">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Academic Snapshot Card -->
+          <div class="lg:col-span-4">
+            <div class="bg-[#FFFFFF] border border-[#E5E0D8] rounded-2xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(20,20,19,0.03)] space-y-5">
+              <div class="border-b border-[#F0ECE4] pb-4">
+                <span class="font-mono text-xs uppercase tracking-wider text-[#8C8880]">Academic Profile</span>
+                <h3 class="mt-1 text-base font-semibold text-[#141413]">B.Tech Computer Science &amp; Engg.</h3>
+              </div>
+
+              <div class="space-y-3.5 text-xs sm:text-sm">
+                <div>
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-[#8C8880] block mb-0.5">Institution</span>
+                  <p class="font-medium text-[#141413]">REVA University</p>
+                  <p class="text-xs text-[#6B6862]">Bengaluru, Karnataka, India</p>
+                </div>
+                <div>
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-[#8C8880] block mb-0.5">Current Stage</span>
+                  <p class="font-medium text-[#141413]">2nd Year Undergraduate (Semester 3/4)</p>
+                </div>
+                <div>
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-[#8C8880] block mb-0.5">Coursework Completed</span>
+                  <p class="text-[#4D4B46]">Activities 1–4 (VS Code, Git, Live Share, LeetCode)</p>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-[#F0ECE4] flex items-center gap-2 text-xs text-[#6B6862]">
+                <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+                <span>Active LeetCode &amp; Systems Practice</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 01: ABOUT ME -->
+    <section id="about" class="py-20 border-b border-[#E5E0D8]/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-mono text-xs font-semibold tracking-wider text-[#D9480F] uppercase">01</span>
+            <span class="h-px w-6 bg-[#E5E0D8]"></span>
+            <span class="text-xs uppercase tracking-widest text-[#6B6862] font-medium">About</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#141413] font-serif">
+            About Me
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-[#6B6862]">
+            My background, academic motivation, and philosophy of learning through building.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-7 space-y-6">
+            <p class="text-lg sm:text-xl text-[#141413] leading-relaxed">
+              I chose Computer Science and Engineering because I am interested in programming and want to learn how to build software. I am currently developing my foundation in programming, data structures, algorithms, databases, and web technologies.
+            </p>
+            <p class="text-base sm:text-lg text-[#6B6862] leading-relaxed">
+              By building hands-on projects—from command-line utilities in C to algorithmic problem solving on LeetCode—I translate theoretical computer science concepts into structured, working software.
+            </p>
+
+            <div class="p-6 rounded-xl bg-[#FFFFFF] border-l-4 border-l-[#D9480F] border border-[#E5E0D8] mt-6">
+              <p class="font-serif italic text-base sm:text-lg text-[#141413]">
+                &ldquo;Building software from the ground up teaches patience, discipline, and attention to detail. Every bug solved in C provides deeper insight into how software actually runs.&rdquo;
+              </p>
+              <span class="block mt-2 font-mono text-xs uppercase tracking-wider text-[#8C8880]">— Rashmita Halder</span>
+            </div>
+          </div>
+
+          <!-- Academic Focus Cards -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="p-5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D8]">
+              <h4 class="text-sm font-semibold text-[#141413] flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#D9480F]"></span>
+                Foundational Computing
+              </h4>
+              <p class="mt-1.5 text-xs sm:text-sm text-[#6B6862] leading-relaxed">
+                Exploring data structures, pointer manipulation, memory allocation, and core systems in C and Java.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D8]">
+              <h4 class="text-sm font-semibold text-[#141413] flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#D9480F]"></span>
+                Algorithmic Problem Solving
+              </h4>
+              <p class="mt-1.5 text-xs sm:text-sm text-[#6B6862] leading-relaxed">
+                Daily practice on LeetCode focusing on arrays, strings, binary search, stacks, and linked lists.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-xl bg-[#FFFFFF] border border-[#E5E0D8]">
+              <h4 class="text-sm font-semibold text-[#141413] flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#D9480F]"></span>
+                Collaborative Development
+              </h4>
+              <p class="mt-1.5 text-xs sm:text-sm text-[#6B6862] leading-relaxed">
+                Version control with Git/GitHub, GitLens history exploration, and VS Code Live Share peer programming.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 02: ACTIVITIES 1-4 & PROJECTS -->
+    <section id="activities" class="py-20 border-b border-[#E5E0D8]/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-mono text-xs font-semibold tracking-wider text-[#D9480F] uppercase">02</span>
+            <span class="h-px w-6 bg-[#E5E0D8]"></span>
+            <span class="text-xs uppercase tracking-widest text-[#6B6862] font-medium">Coursework Artifacts</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#141413] font-serif">
+            Activities 1–4 &amp; Practical Projects
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-[#6B6862]">
+            Real, verifiable artifacts and code repositories built across our laboratory and practical sessions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          
+          <!-- ACTIVITY 1 -->
+          <article class="p-7 rounded-2xl bg-[#FFFFFF] border border-[#E5E0D8] hover:border-[#D9480F]/50 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-xs font-semibold text-[#D9480F]">ACTIVITY 1</span>
+                <span class="text-xs text-[#6B6862] font-mono">VS Code Setup</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold font-serif text-[#141413]">
+                VS Code Setup &amp; Hello World Repository
+              </h3>
+              <p class="mt-3 text-sm text-[#6B6862] leading-relaxed">
+                Configured a professional developer workstation using Visual Studio Code with C/C++ tools, linters, and extensions. Built and pushed the foundational Hello World repository to GitHub to establish proper project bootstrapping.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">VS Code</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Git</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">C</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Environment Setup</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#F0ECE4] flex items-center justify-between">
+              <span class="text-xs text-[#8C8880]">Working Artifact</span>
+              <a href="https://github.com/RashmitaHalder61cpu/hello-world" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-[#D9480F] hover:underline">
+                <span>View hello-world</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ACTIVITY 2 -->
+          <article class="p-7 rounded-2xl bg-[#FFFFFF] border border-[#E5E0D8] hover:border-[#D9480F]/50 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-xs font-semibold text-[#D9480F]">ACTIVITY 2</span>
+                <span class="text-xs text-[#6B6862] font-mono">Git &amp; GitHub Setup</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold font-serif text-[#141413]">
+                Git &amp; Remote GitHub Workflow Setup
+              </h3>
+              <p class="mt-3 text-sm text-[#6B6862] leading-relaxed">
+                Initialized local Git repositories, configured user identity, committed changes with structured messages, managed branches, and established secure remote tracking to GitHub for collaborative software engineering.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Git CLI</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">GitHub</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Branching</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Version Control</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#F0ECE4] flex items-center justify-between">
+              <span class="text-xs text-[#8C8880]">Working Artifact</span>
+              <a href="https://github.com/RashmitaHalder61cpu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-[#D9480F] hover:underline">
+                <span>View Profile</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ACTIVITY 3 -->
+          <article class="p-7 rounded-2xl bg-[#FFFFFF] border border-[#E5E0D8] hover:border-[#D9480F]/50 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-xs font-semibold text-[#D9480F]">ACTIVITY 3</span>
+                <span class="text-xs text-[#6B6862] font-mono">Pair Programming</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold font-serif text-[#141413]">
+                GitLens &amp; Live Share Collaboration Log
+              </h3>
+              <p class="mt-3 text-sm text-[#6B6862] leading-relaxed">
+                Executed live pair-programming sessions using VS Code Live Share. Utilized GitLens to inspect authorship, track code diffs line-by-line, and document structured collaboration logs during peer coding.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">GitLens</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Live Share</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Peer Review</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Collaboration</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#F0ECE4] flex items-center justify-between">
+              <span class="text-xs text-[#8C8880]">Working Artifact</span>
+              <a href="https://github.com/RashmitaHalder61cpu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-[#D9480F] hover:underline">
+                <span>View Repositories</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ACTIVITY 4 -->
+          <article class="p-7 rounded-2xl bg-[#FFFFFF] border border-[#E5E0D8] hover:border-[#D9480F]/50 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-xs font-semibold text-[#D9480F]">ACTIVITY 4</span>
+                <span class="text-xs text-[#6B6862] font-mono">Algorithms Repository</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold font-serif text-[#141413]">
+                LeetCode Solutions Practice Repository
+              </h3>
+              <p class="mt-3 text-sm text-[#6B6862] leading-relaxed">
+                A dedicated repository documenting algorithmic solutions implemented in C, covering arrays, string parsing, searching algorithms, stacks, and linked lists with focus on time and space complexity.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">C</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Algorithms</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Data Structures</span>
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">LeetCode</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#F0ECE4] flex items-center justify-between">
+              <span class="text-xs text-[#8C8880]">Direct Repository Link</span>
+              <a href="https://github.com/RashmitaHalder61cpu/leetcode-solutions" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-[#D9480F] hover:underline">
+                <span>View leetcode-solutions</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- MINI PROJECT -->
+          <article class="md:col-span-2 p-7 sm:p-8 rounded-2xl bg-[#FFFFFF] border border-[#E5E0D8] hover:border-[#D9480F]/50 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-xs font-semibold text-[#D9480F]">SYSTEMS PROJECT</span>
+                <span class="text-xs text-[#6B6862] font-mono">CLI Text Editor</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-bold font-serif text-[#141413]">
+                Simple Line Editor in C
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-[#6B6862] leading-relaxed">
+                A command-line text editor developed in C using an array of strings to manage document lines. It supports inserting, deleting, displaying, searching, find-and-replace, line and word counting, saving, and loading documents.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">C</span>
+                <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">Data Structures</span>
+                <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">CLI</span>
+                <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">File I/O</span>
+                <span class="font-mono text-xs px-2.5 py-1 rounded bg-[#F4F1EB] text-[#4D4B46] border border-[#E5E0D8]">String Buffers</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-[#F0ECE4] flex items-center justify-between">
+              <span class="text-xs text-[#8C8880]">Repository: MINIPROJECT-R25EF214</span>
+              <a href="https://github.com/RashmitaHalder61cpu/MINIPROJECT-R25EF214" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#D9480F] hover:underline">
+                <span>View Source Code on GitHub</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03: SKILLS -->
+    <section id="skills" class="py-20 border-b border-[#E5E0D8]/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-mono text-xs font-semibold tracking-wider text-[#D9480F] uppercase">03</span>
+            <span class="h-px w-6 bg-[#E5E0D8]"></span>
+            <span class="text-xs uppercase tracking-widest text-[#6B6862] font-medium">Skills</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#141413] font-serif">
+            Technical Skills
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-[#6B6862]">
+            Programming languages, databases, web technologies, and developer tooling actively used in coursework and practice.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          
+          <!-- C -->
+          <div class="p-6 bg-white rounded-xl border border-[#E5E0D8] hover:border-[#D9480F]/40 transition-all">
+            <span class="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#F4F1EB] text-[#6B6862] border border-[#E5E0D8]">Language</span>
+            <h3 class="text-lg font-semibold text-[#141413] mt-3">C</h3>
+            <p class="mt-2 text-xs text-[#6B6862] leading-relaxed">Low-level memory management, pointer arithmetic, 2D arrays, and command-line applications.</p>
+          </div>
+
+          <!-- Java -->
+          <div class="p-6 bg-white rounded-xl border border-[#E5E0D8] hover:border-[#D9480F]/40 transition-all">
+            <span class="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#F4F1EB] text-[#6B6862] border border-[#E5E0D8]">Language</span>
+            <h3 class="text-lg font-semibold text-[#141413] mt-3">Java</h3>
+            <p class="mt-2 text-xs text-[#6B6862] leading-relaxed">Object-oriented programming, class design, encapsulation, and inheritance principles.</p>
+          </div>
+
+          <!-- Python -->
+          <div class="p-6 bg-white rounded-xl border border-[#E5E0D8] hover:border-[#D9480F]/40 transition-all">
+            <span class="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#F4F1EB] text-[#6B6862] border border-[#E5E0D8]">Language</span>
+            <h3 class="text-lg font-semibold text-[#141413] mt-3">Python</h3>
+            <p class="mt-2 text-xs text-[#6B6862] leading-relaxed">Scripting, algorithm implementation, rapid prototyping, and foundational logic.</p>
+          </div>
+
+          <!-- SQL -->
+          <div class="p-6 bg-white rounded-xl border border-[#E5E0D8] hover:border-[#D9480F]/40 transition-all">
+            <span class="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#F4F1EB] text-[#6B6862] border border-[#E5E0D8]">Database</span>
+            <h3 class="text-lg font-semibold text-[#141413] mt-3">SQL</h3>
+            <p class="mt-2 text-xs text-[#6B6862] leading-relaxed">Relational database schemas, table design, queries, joins, and data manipulation.</p>
+          </div>
+
+          <!-- HTML -->
+          <div class="p-6 bg-white rounded-xl border border-[#E5E0D8] hover:border-[#D9480F]/40 transition-all">
+            <span class="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#F4F1EB] text-[#6B6862] border border-[#E5E0D8]">Web</span>
+            <h3 class="text-lg font-semibold text-[#141413] mt-3">HTML</h3>
+            <p class="mt-2 text-xs text-[#6B6862] leading-relaxed">Semantic HTML5 structuring, web accessibility standards, and document architecture.</p>
+          </div>
+
+          <!-- CSS -->
+          <div class="p-6 bg-white rounded-xl border border-[#E5E0D8] hover:border-[#D9480F]/40 transition-all">
+            <span class="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#F4F1EB] text-[#6B6862] border border-[#E5E0D8]">Web</span>
+            <h3 class="text-lg font-semibold text-[#141413] mt-3">CSS</h3>
+            <p class="mt-2 text-xs text-[#6B6862] leading-relaxed">Responsive layouts, modern flexbox/grid systems, and editorial typography styling.</p>
+          </div>
+
+          <!-- Git -->
+          <div class="p-6 bg-white rounded-xl border border-[#E5E0D8] hover:border-[#D9480F]/40 transition-all">
+            <span class="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#F4F1EB] text-[#6B6862] border border-[#E5E0D8]">Tool</span>
+            <h3 class="text-lg font-semibold text-[#141413] mt-3">Git</h3>
+            <p class="mt-2 text-xs text-[#6B6862] leading-relaxed">Version control CLI, branch switching, merging, committing, and GitLens diff tracking.</p>
+          </div>
+
+          <!-- GitHub -->
+          <div class="p-6 bg-white rounded-xl border border-[#E5E0D8] hover:border-[#D9480F]/40 transition-all">
+            <span class="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#F4F1EB] text-[#6B6862] border border-[#E5E0D8]">Platform</span>
+            <h3 class="text-lg font-semibold text-[#141413] mt-3">GitHub</h3>
+            <p class="mt-2 text-xs text-[#6B6862] leading-relaxed">Remote hosting, repository documentation, GitHub Pages publication, and collaboration.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 04: CAREER / LEARNING GOAL -->
+    <section id="goal" class="py-20 border-b border-[#E5E0D8]/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-mono text-xs font-semibold tracking-wider text-[#D9480F] uppercase">04</span>
+            <span class="h-px w-6 bg-[#E5E0D8]"></span>
+            <span class="text-xs uppercase tracking-widest text-[#6B6862] font-medium">Vision</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#141413] font-serif">
+            Career &amp; Learning Goal
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-[#6B6862]">
+            My targeted technical trajectory for undergraduate studies and beyond.
+          </p>
+        </div>
+
+        <div class="p-8 sm:p-10 rounded-2xl bg-white border border-[#E5E0D8] shadow-[0_8px_30px_rgba(20,20,19,0.03)]">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-8 space-y-4">
+              <span class="font-mono text-xs uppercase tracking-wider text-[#D9480F] font-semibold">Primary Objective</span>
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-[#141413]">
+                Mastering Algorithmic Problem Solving &amp; Systems Architecture
+              </h3>
+              <p class="text-base text-[#4D4B46] leading-relaxed">
+                My immediate goal is to achieve strong fluency in Data Structures and Algorithms by solving 250+ LeetCode problems, while simultaneously expanding my understanding of systems programming, database internals, and software engineering best practices.
+              </p>
+              <p class="text-sm text-[#6B6862] leading-relaxed">
+                Long term, I aim to become a high-impact Software Engineer who designs reliable, performant, and scalable applications that solve real-world problems.
+              </p>
+            </div>
+
+            <div class="lg:col-span-4 bg-[#F9F8F6] p-6 rounded-xl border border-[#E5E0D8] space-y-3">
+              <h4 class="font-mono text-xs uppercase tracking-wider text-[#8C8880]">Milestones Track</h4>
+              <ul class="space-y-2.5 text-xs text-[#141413]">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#D9480F]"></span>
+                  <span>Daily LeetCode problem solving in C</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#D9480F]"></span>
+                  <span>Deep dive into DBMS &amp; SQL optimization</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#D9480F]"></span>
+                  <span>Building end-to-end full-stack software</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#D9480F]"></span>
+                  <span>Collaborating on open-source repositories</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 05: CONTACT -->
+    <section id="contact" class="py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-mono text-xs font-semibold tracking-wider text-[#D9480F] uppercase">05</span>
+            <span class="h-px w-6 bg-[#E5E0D8]"></span>
+            <span class="text-xs uppercase tracking-widest text-[#6B6862] font-medium">Connect</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#141413] font-serif">
+            Let's Connect
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-[#6B6862]">
+            I'm always interested in learning, building, and connecting with people in the technology community.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- GitHub Card -->
+            <div class="p-7 rounded-2xl bg-white border border-[#E5E0D8] flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-[#FDF3EE] text-[#D9480F] flex items-center justify-center mb-4">
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#141413]">GitHub</h3>
+                <p class="mt-2 text-sm text-[#6B6862]">Explore my repositories, commits, and practice problem logs.</p>
+                <span class="mt-3 font-mono text-xs bg-[#F4F1EB] px-2.5 py-1 rounded inline-block text-[#141413]">@RashmitaHalder61cpu</span>
+              </div>
+              <a href="https://github.com/RashmitaHalder61cpu" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#D9480F] hover:underline">
+                <span>View GitHub Profile</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </a>
+            </div>
+
+            <!-- LinkedIn Card -->
+            <div class="p-7 rounded-2xl bg-white border border-[#E5E0D8] flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-[#FDF3EE] text-[#D9480F] flex items-center justify-center mb-4">
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#141413]">LinkedIn</h3>
+                <p class="mt-2 text-sm text-[#6B6862]">Connect with me professionally for peer projects and networking.</p>
+                <span class="mt-3 font-mono text-xs bg-[#F4F1EB] px-2.5 py-1 rounded inline-block text-[#141413]">in/rashmita-halder</span>
+              </div>
+              <a href="https://www.linkedin.com/in/rashmita-halder/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#D9480F] hover:underline">
+                <span>Connect on LinkedIn</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </a>
+            </div>
+
+            <!-- Email Card -->
+            <div class="sm:col-span-2 p-7 rounded-2xl bg-white border border-[#E5E0D8]">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-[#FDF3EE] text-[#D9480F] flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold text-[#141413]">Email</h3>
+                    <p class="text-sm text-[#6B6862] mt-0.5">Direct communication for project inquiries or discussion.</p>
+                    <p class="mt-2 font-mono text-sm font-semibold text-[#141413]">rashmitahalder61@gmail.com</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <a href="mailto:rashmitahalder61@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#D9480F] text-white text-sm font-semibold hover:bg-[#C03E0C] transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    <span>Send Email</span>
+                  </a>
+                  <button id="copy-email-btn" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-[#E5E0D8] bg-[#F9F8F6] text-sm text-[#141413] hover:border-[#D9480F]">
+                    <span id="copy-text">Copy Address</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Academic Context Sidebar -->
+          <div class="lg:col-span-4 bg-white border border-[#E5E0D8] rounded-2xl p-7 flex flex-col justify-between">
+            <div class="space-y-4">
+              <span class="font-mono text-xs uppercase tracking-wider text-[#8C8880]">Academic Details</span>
+              <h4 class="text-lg font-bold text-[#141413]">REVA University</h4>
+              <p class="text-sm text-[#6B6862] leading-relaxed">
+                School of Computer Science and Engineering, Rukmini Knowledge Park, Kattigenahalli, Yelahanka, Bengaluru, Karnataka 560064.
+              </p>
+              <div class="pt-2 text-xs font-mono text-[#8C8880]">
+                Status: <span class="text-[#141413] font-medium">Full-time B.Tech Undergrad</span>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-[#F0ECE4] text-xs text-[#8C8880]">
+              Portfolio created for AI-Assisted Portfolio Blog Activity.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="bg-white border-t border-[#E5E0D8] py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-6 border-b border-[#F0ECE4]">
+        <div>
+          <span class="font-serif text-lg font-bold text-[#141413]">Rashmita Halder</span>
+          <p class="text-xs text-[#6B6862]">CSE Student | Aspiring Software Developer • REVA University</p>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-medium text-[#6B6862]">
+          <a href="https://github.com/RashmitaHalder61cpu" target="_blank" rel="noopener noreferrer" class="hover:text-[#D9480F]">GitHub</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/rashmita-halder/" target="_blank" rel="noopener noreferrer" class="hover:text-[#D9480F]">LinkedIn</a>
+          <span>•</span>
+          <a href="mailto:rashmitahalder61@gmail.com" class="hover:text-[#D9480F]">Email</a>
+          <span>•</span>
+          <a href="#home" class="hover:text-[#D9480F]">Back to Top ↑</a>
+        </div>
+      </div>
+      <div class="pt-6 text-center text-xs text-[#8C8880]">
+        &copy; <span id="year"></span> Rashmita Halder. Published on GitHub Pages.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Copy Email
+    const copyBtn = document.getElementById('copy-email-btn');
+    const copyText = document.getElementById('copy-text');
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('rashmitahalder61@gmail.com');
+      copyText.textContent = 'Copied!';
+      setTimeout(() => {
+        copyText.textContent = 'Copy Address';
+      }, 2000);
+    });
+  </script>
+</body>
 </html>
